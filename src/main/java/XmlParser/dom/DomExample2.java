@@ -1,4 +1,4 @@
-package XmlParser;
+package XmlParser.dom;
 
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
@@ -25,7 +25,7 @@ public class DomExample2 {
             // Создается построитель документа
             DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
             // Создается дерево DOM документа из файла
-            Document document = documentBuilder.parse("src/main/resources/request.xml");
+            Document document = documentBuilder.parse("src/main/resources/dom/request.xml");
 
             // Вызываем метод для добавления новой книги
             addNewBook(document);
@@ -88,7 +88,7 @@ public class DomExample2 {
         try {
             Transformer tr = TransformerFactory.newInstance().newTransformer();
             DOMSource source = new DOMSource(document);
-            FileOutputStream fos = new FileOutputStream("src/main/resources/response.xml");
+            FileOutputStream fos = new FileOutputStream("src/main/resources/dom/response.xml");
             StreamResult result = new StreamResult(fos);
             tr.transform(source, result);
         } catch (TransformerException | IOException e) {

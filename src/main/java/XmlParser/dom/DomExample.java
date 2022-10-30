@@ -1,4 +1,4 @@
-package XmlParser;
+package XmlParser.dom;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -17,7 +17,7 @@ public class DomExample {
                 // Создается построитель документа
                 DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
                 // Создается дерево DOM документа из файла
-                Document document = documentBuilder.parse("src/main/resources/request.xml");
+                Document document = documentBuilder.parse("src/main/resources/dom/request.xml");
 
                 // Получаем корневой элемент
                 Node root = document.getDocumentElement();
